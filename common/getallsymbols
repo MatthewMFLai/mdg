@@ -1,0 +1,39 @@
+#!/bin/sh
+# \
+exec tclsh $0 $@
+
+proc getallsymbols {filedir outfile} {
+    set keyword "MODULE"
+    set prefix $filedir
+    set fd [open $outfile w]
+    set filelist [glob -directory $filedir *.o]
+    foreach objfile $filelist {
+	# Extract file name first.
+	set filename [lindex [split $objfile "/"] end]
+	set filename [lindex [split $filename "."] 0]
+	puts "Extracting symbols from $filename..."
+	#set result [exec pic30-nm -g $objfile]
+	if {[file exists custom/nm.exe]} {
+	    set result [exec custom/nm.exe $objfile]
+	} else {
+	    #set result [exec ../bin/nm $objfile]
+	    if {[catch {exec ../bin/nm $objfile} result]} {
+		puts "nm exception: $result"
+	 	continue
+	    }
+	}
+	# Line may look like
+	# 00000140 T _altCommsTask
+        #          U _doPClink
+	puts $fd "$keyword $filename"
+	puts $fd $result
+    }
+    close $fd
+}
+
+#set filedir "C:/PC9155en/Obj"
+set filedir [lindex $argv 0] 
+set outfile "symbols.all"
+getallsymbols $filedir $outfile
+
+exit 0
