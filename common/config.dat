@@ -1,0 +1,48 @@
+BEGIN simple MDG_HOME
+  bySymbol symbol
+  bySymbolDefined symboldefined
+END
+
+BEGIN complex PATTERN_HOME
+  byCorepanel_Module assoc
+  byModule_Property assoc
+  byRequired_Sym_Link assoc
+  bySym_Property assoc
+  byModule_Link graph
+  bySymbol_Depend graph
+  byGlobal_Sym_Link lattice
+END
+
+BEGIN dynamic_type
+  Corepanel byCorepanel_Module init_whole
+
+  Module bySymbol init 
+  Module byCorepanel_Module init_part_new
+  Module byModule_Link init_entity
+ 
+  Property bySymbol init
+  Property bySym_Property init_whole
+  Property byModule_Property init_part_new
+
+  Symbolrequired bySymbol init
+  Symbolrequired bySym_Property init_part_new
+  Symbolrequired byRequired_Sym_Link init_part_new
+  Symbolrequired bySymbol_Depend graph_init_vertex
+ 
+  Symboldefined bySymbol init
+  Symboldefined bySymbolDefined init
+  Symboldefined bySym_Property init_part_new
+  Symboldefined bySymbol_Depend graph_init_vertex
+
+  Symbolglobal bySymbol init
+  Symbolglobal bySymbolDefined init
+  Symbolglobal bySym_Property init_part_new
+  Symbolglobal bySymbol_Depend graph_init_vertex
+  Symbolglobal byGlobal_Sym_Link init_entity
+
+  Link byRequired_Sym_Link init_whole
+  Link byModule_Link graph_init_edge
+  Link byGlobal_Sym_Link init_entity  
+  
+  Depend bySymbol_Depend graph_init_edge
+END
