@@ -18,7 +18,7 @@ BEGIN dynamic_type
 
   Module bySymbol init 
   Module byCorepanel_Module init_part_new
-  Module byModule_Link init_entity
+  Module byModule_Link graph_init_vertex
  
   Property bySymbol init
   Property bySym_Property init_whole

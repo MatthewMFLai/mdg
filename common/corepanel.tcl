@@ -14,27 +14,23 @@
 
 if {$tcl_platform(platform) == "windows"} {
 source ../common/malloc.tcl
-source ../common/bySymbol.tcl
-source ../common/bySymbolDefined.tcl
-source ../common/bySym_Property.tcl
-source ../common/byRequired_Sym_Link.tcl
-source ../common/byModule_Property.tcl
-source ../common/byModule_Link.tcl
-source ../common/byGlobal_Sym_Link.tcl
-source ../common/byCorepanel_Module.tcl
-source ../common/bySymbol_Depend.tcl
 } else {
 source $env(COREPANEL_HOME)/malloc.tcl
-source $env(COREPANEL_HOME)/bySymbol.tcl
-source $env(COREPANEL_HOME)/bySymbolDefined.tcl
-source $env(COREPANEL_HOME)/bySym_Property.tcl
-source $env(COREPANEL_HOME)/byRequired_Sym_Link.tcl
-source $env(COREPANEL_HOME)/byModule_Property.tcl
-source $env(COREPANEL_HOME)/byModule_Link.tcl
-source $env(COREPANEL_HOME)/byGlobal_Sym_Link.tcl
-source $env(COREPANEL_HOME)/byCorepanel_Module.tcl
-source $env(COREPANEL_HOME)/bySymbol_Depend.tcl
 }
+foreach filename [glob $env(MDG_HOME)/gencode/simple/*.tcl] {
+    source $filename
+}   
+# DYNAMIC SOURCE END 
+# DYNAMIC SOURCE BEGIN
+foreach filename [glob $env(MDG_HOME)/gencode/complex/*.tcl] {
+    source $filename
+}
+# DYNAMIC SOURCE END
+# DYNAMIC SOURCE BEGIN
+foreach filename [glob $env(MDG_HOME)/gencode/dynamic_type/*.tcl] {
+    source $filename
+}
+# DYNAMIC SOURCE END
 
 namespace eval CorePanel {
 
@@ -48,85 +44,34 @@ proc Init_Corepanel {} {
 
     # Initiailize the graph object first.
     set g_corepanel [malloc::getmem]
-    byCorepanel_Module::init_whole $g_corepanel
+    init_Corepanel $g_corepanel
 
     set g_version "0.02"
-}
-
-proc init_module {p_module name} {
-
-    bySymbol::init $p_module
-    bySymbol::set_symbol $p_module $name
-    byModule_Link::graph_init_vertex $p_module
-    byCorepanel_Module::init_part $p_module $name
-}
-
-proc init_property {p_property name} {
-
-    bySymbol::init $p_property
-    bySymbol::set_symbol $p_property $name
-    bySym_Property::init_whole $p_property
-    byModule_Property::init_part $p_property $name
-}
-
-proc init_symbolrequired {p_symbol name} {
-
-    bySymbol::init $p_symbol
-    bySymbol::set_symbol $p_symbol $name
-    bySym_Property::init_part $p_symbol $name
-    byRequired_Sym_Link::init_part $p_symbol $name
-    bySymbol_Depend::graph_init_vertex $p_symbol
-}
-
-proc init_symboldefined {p_symbol name is_function is_bss} {
-
-    bySymbol::init $p_symbol
-    bySymbol::set_symbol $p_symbol $name
-    bySym_Property::init_part $p_symbol $name
-    bySymbolDefined::init $p_symbol
-    bySymbolDefined::set_is_function $p_symbol $is_function
-    bySymbolDefined::set_is_bss $p_symbol $is_bss
-    bySymbol_Depend::graph_init_vertex $p_symbol
-}
-
-proc init_symbolglobal {p_symbol name is_function is_bss} {
-    bySymbol::init $p_symbol
-    bySymbol::set_symbol $p_symbol $name
-    bySym_Property::init_part $p_symbol $name
-    bySymbolDefined::init $p_symbol
-    bySymbolDefined::set_is_function $p_symbol $is_function
-    bySymbolDefined::set_is_bss $p_symbol $is_bss
-    byGlobal_Sym_Link::init_entity $p_symbol
-    bySymbol_Depend::graph_init_vertex $p_symbol
-}
-
-proc init_link {p_link} {
-
-    byRequired_Sym_Link::init_whole $p_link
-    byModule_Link::graph_init_edge $p_link
-    byGlobal_Sym_Link::init_entity $p_link
-}
-
-proc init_depend {p_depend} {
-
-    bySymbol_Depend::graph_init_edge $p_depend
 }
 
 proc Create_Module {name} {
     variable g_corepanel
 
     set p_thing [malloc::getmem]
-    init_module $p_thing $name
+    init_Module $p_thing
+	bySymbol::set_symbol $p_thing $name
+	byCorepanel_Module::set_key $p_thing $name
     byCorepanel_Module::add_part $g_corepanel $p_thing
 
     set p_thing2 [malloc::getmem]
-    init_property $p_thing2 "GLOBAL"
+    init_Property $p_thing2
+	bySymbol::set_symbol $p_thing2 "GLOBAL"
+	byModule_Property::set_key $p_thing2 "GLOBAL"
     byModule_Property::add_part $p_thing $p_thing2
     set p_thing2 [malloc::getmem]
-    init_property $p_thing2 "LOCAL"
+    init_Property $p_thing2 "LOCAL"
+	bySymbol::set_symbol $p_thing2 "LOCAL"
+	byModule_Property::set_key $p_thing2 "LOCAL"
     byModule_Property::add_part $p_thing $p_thing2
     set p_thing2 [malloc::getmem]
-    init_property $p_thing2 "REQUIRED"
+    init_Property $p_thing2 "REQUIRED"
+	bySymbol::set_symbol $p_thing2 "REQUIRED"
+	byModule_Property::set_key $p_thing2 "REQUIRED"
     byModule_Property::add_part $p_thing $p_thing2
 
     return $p_thing
@@ -137,11 +82,23 @@ proc Create_Symbol {name p_module type is_function is_bss} {
     set p_thing [malloc::getmem]
     switch -- $type \
 	REQUIRED {
-	    init_symbolrequired $p_thing $name
+	    init_Symbolrequired $p_thing
+		bySymbol::set_symbol $p_thing $name
+		bySym_Property::set_key $p_thing $name
+		byRequired_Sym_Link::set_key $p_thing $name
+		
     } GLOBAL {
-	    init_symbolglobal $p_thing $name $is_function $is_bss
+	    init_Symbolglobal $p_thing
+		bySymbol::set_key $p_thing $name
+		bySym_Property::set_key $p_thing $name
+		bySymbolDefined::set_is_function $p_thing $is_function
+		bySymbolDefined::set_is_bss $p_thing $is_bss		
     } LOCAL { 
-	    init_symboldefined $p_thing $name $is_function $is_bss
+	    init_Symboldefined $p_thing
+		bySymbol::set_symbol $p_thing $name
+		bySym_Property::set_key $p_thing $name
+		bySymbolDefined::set_is_function $p_thing $is_function
+		bySymbolDefined::set_is_bss $p_thing $is_bss
     }
 
     set p_property [byModule_Property::get_part $p_module $type]
@@ -292,7 +249,7 @@ proc Set_Linkage {p_from_module p_to_module} {
     # The to_module provides symbols used by the from_module.
     # Set the link between the two modules. 
     set p_link [malloc::getmem]
-    init_link $p_link
+    init_Link $p_link
     byModule_Link::graph_add_edge $p_from_module $p_to_module $p_link
 
     # Add the required symbols to the link.
@@ -341,7 +298,7 @@ proc Set_Symbol_Depend {module fromsymbol fromproperty tosymbol toproperty} {
     }
 
     set p_depend [malloc::getmem]
-    init_depend $p_depend
+    init_Depend $p_depend
     bySymbol_Depend::graph_add_edge $p_fromsymbol $p_tosymbol $p_depend
     #puts "$module: $fromproperty $fromsymbol ---> $toproperty $tosymbol"
 }
