@@ -64,12 +64,12 @@ proc Create_Module {name} {
 	byModule_Property::set_key $p_thing2 "GLOBAL"
     byModule_Property::add_part $p_thing $p_thing2
     set p_thing2 [malloc::getmem]
-    init_Property $p_thing2 "LOCAL"
+    init_Property $p_thing2
 	bySymbol::set_symbol $p_thing2 "LOCAL"
 	byModule_Property::set_key $p_thing2 "LOCAL"
     byModule_Property::add_part $p_thing $p_thing2
     set p_thing2 [malloc::getmem]
-    init_Property $p_thing2 "REQUIRED"
+    init_Property $p_thing2
 	bySymbol::set_symbol $p_thing2 "REQUIRED"
 	byModule_Property::set_key $p_thing2 "REQUIRED"
     byModule_Property::add_part $p_thing $p_thing2
@@ -89,7 +89,7 @@ proc Create_Symbol {name p_module type is_function is_bss} {
 		
     } GLOBAL {
 	    init_Symbolglobal $p_thing
-		bySymbol::set_key $p_thing $name
+		bySymbol::set_symbol $p_thing $name
 		bySym_Property::set_key $p_thing $name
 		bySymbolDefined::set_is_function $p_thing $is_function
 		bySymbolDefined::set_is_bss $p_thing $is_bss		
