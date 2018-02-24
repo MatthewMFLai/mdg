@@ -234,3 +234,4 @@ nordic_mesh/graphs/bare_template.dat
 scanner_demo/corepanel.dat
 scanner_demo/graphs/bare_template.dat
 scanner_demo/corepanel_org.dat
+*.exe

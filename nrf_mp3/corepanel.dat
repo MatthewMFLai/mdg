@@ -1,0 +1,426 @@
+set alloc_list [ list MALLOC0 MALLOC1 MALLOC2 MALLOC3 MALLOC4 MALLOC5 MALLOC6 MALLOC7 MALLOC8 MALLOC9 MALLOC10 MALLOC11 MALLOC12 MALLOC13 MALLOC14 MALLOC15 MALLOC16 MALLOC17 MALLOC18 MALLOC19 MALLOC20 MALLOC21 MALLOC22 MALLOC23 MALLOC24 MALLOC25 MALLOC26 MALLOC27 MALLOC28 MALLOC29 MALLOC30 MALLOC31 MALLOC32 MALLOC33 MALLOC34 MALLOC35 MALLOC36 MALLOC37 MALLOC38 MALLOC39 MALLOC40 MALLOC41 MALLOC42 MALLOC43 MALLOC44 MALLOC45 MALLOC46 MALLOC47 MALLOC48 MALLOC49 MALLOC50 MALLOC51 MALLOC52 MALLOC53 MALLOC54 MALLOC55 MALLOC56 MALLOC57 MALLOC58 MALLOC59 MALLOC60 MALLOC61 MALLOC62 MALLOC63 MALLOC64 MALLOC65 MALLOC66 MALLOC67 MALLOC68 MALLOC69 MALLOC70 MALLOC71 MALLOC72 MALLOC73 MALLOC74 MALLOC75 MALLOC76 MALLOC77 MALLOC78 MALLOC79 MALLOC80 MALLOC81 MALLOC82 MALLOC83 MALLOC84 MALLOC85 MALLOC86 MALLOC87 MALLOC88 MALLOC89 MALLOC90 MALLOC91 MALLOC92 MALLOC93 MALLOC94 MALLOC95 MALLOC96 MALLOC97 MALLOC98 MALLOC99 MALLOC100 MALLOC101 MALLOC102 MALLOC103 MALLOC104 MALLOC105 MALLOC106 MALLOC107 MALLOC108 MALLOC109 MALLOC110 MALLOC111 MALLOC112 MALLOC113 MALLOC114 MALLOC115 MALLOC116 MALLOC117 MALLOC118 MALLOC119 MALLOC120 MALLOC121 MALLOC122 MALLOC123 MALLOC124 MALLOC125 MALLOC126 MALLOC127 MALLOC128 MALLOC129 MALLOC130 MALLOC131 MALLOC132 MALLOC133 MALLOC134 MALLOC135 MALLOC136 MALLOC137 MALLOC138 MALLOC139 MALLOC140 MALLOC141 MALLOC142 MALLOC143 MALLOC144 MALLOC145 MALLOC146 MALLOC147 MALLOC148 MALLOC149 MALLOC150 MALLOC151 MALLOC152 MALLOC153 MALLOC154 MALLOC155 MALLOC156 MALLOC157 MALLOC158 MALLOC159 MALLOC160 MALLOC161 MALLOC162 MALLOC163 MALLOC164 MALLOC165 MALLOC166 MALLOC167 MALLOC168 MALLOC169 MALLOC170 MALLOC171 MALLOC172 MALLOC173 MALLOC174 MALLOC175 MALLOC176 MALLOC177 MALLOC178 MALLOC179 MALLOC180 MALLOC181 MALLOC182 MALLOC183 MALLOC184 MALLOC185 MALLOC186 MALLOC187 MALLOC188 MALLOC189 MALLOC190 MALLOC191 MALLOC192 MALLOC193 MALLOC194 MALLOC195 MALLOC196 MALLOC197 MALLOC198 MALLOC199 MALLOC200 MALLOC201 MALLOC202 MALLOC203 MALLOC204 MALLOC205 MALLOC206 MALLOC207 MALLOC208 MALLOC209 MALLOC210 ]
+set free_list ""
+set next_id 211
+array set var_table { corepanel MALLOC0 }
+global MALLOC0
+array set MALLOC0 { assoc:byCorepanel_Module:part_list {MALLOC1 MALLOC25 MALLOC41 MALLOC55 MALLOC61 MALLOC70 MALLOC82 MALLOC93 MALLOC103 MALLOC112 MALLOC135 MALLOC146 MALLOC152 MALLOC162 MALLOC172 MALLOC181} }
+global MALLOC1
+array set MALLOC1 { assoc:byModule_Property:part_list {MALLOC2 MALLOC3 MALLOC4} assoc:byCorepanel_Module:whole_ref MALLOC0 symbol:bySymbol:symbol Adafruit_MP3 graph:byModule_Link:to_edge_list {} graph:byModule_Link:from_edge_list MALLOC192 assoc:byCorepanel_Module:key Adafruit_MP3 }
+global MALLOC2
+array set MALLOC2 { assoc:byModule_Property:whole_ref MALLOC1 symbol:bySymbol:symbol GLOBAL assoc:byModule_Property:key GLOBAL assoc:bySym_Property:part_list {MALLOC9 MALLOC11 MALLOC12 MALLOC13 MALLOC14 MALLOC15 MALLOC16 MALLOC17 MALLOC18 MALLOC19 MALLOC20 MALLOC23 MALLOC24} }
+global MALLOC3
+array set MALLOC3 { assoc:byModule_Property:whole_ref MALLOC1 symbol:bySymbol:symbol LOCAL assoc:byModule_Property:key LOCAL assoc:bySym_Property:part_list MALLOC10 }
+global MALLOC4
+array set MALLOC4 { assoc:byModule_Property:whole_ref MALLOC1 symbol:bySymbol:symbol REQUIRED assoc:byModule_Property:key REQUIRED assoc:bySym_Property:part_list {MALLOC5 MALLOC6 MALLOC7 MALLOC8 MALLOC21 MALLOC22} }
+global MALLOC5
+array set MALLOC5 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC4 assoc:byRequired_Sym_Link:whole_ref MALLOC192 symbol:bySymbol:symbol MP3Decode graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key MP3Decode assoc:byRequired_Sym_Link:key MP3Decode }
+global MALLOC6
+array set MALLOC6 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC4 assoc:byRequired_Sym_Link:whole_ref MALLOC192 symbol:bySymbol:symbol MP3FindSyncWord graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key MP3FindSyncWord assoc:byRequired_Sym_Link:key MP3FindSyncWord }
+global MALLOC7
+array set MALLOC7 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC4 assoc:byRequired_Sym_Link:whole_ref MALLOC192 symbol:bySymbol:symbol MP3GetNextFrameInfo graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key MP3GetNextFrameInfo assoc:byRequired_Sym_Link:key MP3GetNextFrameInfo }
+global MALLOC8
+array set MALLOC8 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC4 assoc:byRequired_Sym_Link:whole_ref MALLOC192 symbol:bySymbol:symbol MP3InitDecoder graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key MP3InitDecoder assoc:byRequired_Sym_Link:key MP3InitDecoder }
+global MALLOC9
+array set MALLOC9 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC2 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {} symbol:bySymbol:symbol TIMER1_IRQHandler graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key TIMER1_IRQHandler }
+global MALLOC10
+array set MALLOC10 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC3 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZL19sampleReadyCallback graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZL19sampleReadyCallback }
+global MALLOC11
+array set MALLOC11 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC2 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {} symbol:bySymbol:symbol _ZN12Adafruit_MP313findID3OffsetEPh graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _ZN12Adafruit_MP313findID3OffsetEPh }
+global MALLOC12
+array set MALLOC12 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC2 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {} symbol:bySymbol:symbol _ZN12Adafruit_MP317setBufferCallbackEPFiPhiE graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _ZN12Adafruit_MP317setBufferCallbackEPFiPhiE }
+global MALLOC13
+array set MALLOC13 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC2 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {} symbol:bySymbol:symbol _ZN12Adafruit_MP322setSampleReadyCallbackEPFvssE graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _ZN12Adafruit_MP322setSampleReadyCallbackEPFvssE }
+global MALLOC14
+array set MALLOC14 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC2 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {} symbol:bySymbol:symbol _ZN12Adafruit_MP34playEv graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _ZN12Adafruit_MP34playEv }
+global MALLOC15
+array set MALLOC15 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC2 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {} symbol:bySymbol:symbol _ZN12Adafruit_MP34stopEv graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _ZN12Adafruit_MP34stopEv }
+global MALLOC16
+array set MALLOC16 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC2 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {} symbol:bySymbol:symbol _ZN12Adafruit_MP34tickEv graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _ZN12Adafruit_MP34tickEv }
+global MALLOC17
+array set MALLOC17 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC2 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {} symbol:bySymbol:symbol _ZN12Adafruit_MP35beginEv graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _ZN12Adafruit_MP35beginEv }
+global MALLOC18
+array set MALLOC18 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC2 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {} symbol:bySymbol:symbol _ZN12Adafruit_MP36resumeEv graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _ZN12Adafruit_MP36resumeEv }
+global MALLOC19
+array set MALLOC19 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC2 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {} symbol:bySymbol:symbol activeOutbuf graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key activeOutbuf }
+global MALLOC20
+array set MALLOC20 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC2 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {} symbol:bySymbol:symbol channels graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key channels }
+global MALLOC21
+array set MALLOC21 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC4 assoc:byRequired_Sym_Link:whole_ref {} symbol:bySymbol:symbol memcpy graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key memcpy assoc:byRequired_Sym_Link:key memcpy }
+global MALLOC22
+array set MALLOC22 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC4 assoc:byRequired_Sym_Link:whole_ref {} symbol:bySymbol:symbol memmove graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key memmove assoc:byRequired_Sym_Link:key memmove }
+global MALLOC23
+array set MALLOC23 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC2 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {} symbol:bySymbol:symbol outbufs graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key outbufs }
+global MALLOC24
+array set MALLOC24 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC2 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {} symbol:bySymbol:symbol outptr graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key outptr }
+global MALLOC25
+array set MALLOC25 { assoc:byModule_Property:part_list {MALLOC26 MALLOC27 MALLOC28} assoc:byCorepanel_Module:whole_ref MALLOC0 symbol:bySymbol:symbol bitstream graph:byModule_Link:to_edge_list {MALLOC198 MALLOC206} graph:byModule_Link:from_edge_list MALLOC193 assoc:byCorepanel_Module:key bitstream }
+global MALLOC26
+array set MALLOC26 { assoc:byModule_Property:whole_ref MALLOC25 symbol:bySymbol:symbol GLOBAL assoc:byModule_Property:key GLOBAL assoc:bySym_Property:part_list {MALLOC29 MALLOC30 MALLOC31 MALLOC32 MALLOC33 MALLOC34} }
+global MALLOC27
+array set MALLOC27 { assoc:byModule_Property:whole_ref MALLOC25 symbol:bySymbol:symbol LOCAL assoc:byModule_Property:key LOCAL assoc:bySym_Property:part_list {} }
+global MALLOC28
+array set MALLOC28 { assoc:byModule_Property:whole_ref MALLOC25 symbol:bySymbol:symbol REQUIRED assoc:byModule_Property:key REQUIRED assoc:bySym_Property:part_list {MALLOC35 MALLOC36 MALLOC37 MALLOC38 MALLOC39 MALLOC40} }
+global MALLOC29
+array set MALLOC29 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC26 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC206 symbol:bySymbol:symbol _Z12xmp3_GetBitsP14_BitStreamInfoi graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z12xmp3_GetBitsP14_BitStreamInfoi }
+global MALLOC30
+array set MALLOC30 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC26 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC198 symbol:bySymbol:symbol _Z16xmp3_CheckPadBitP11_MP3DecInfo graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z16xmp3_CheckPadBitP11_MP3DecInfo }
+global MALLOC31
+array set MALLOC31 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC26 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC206 symbol:bySymbol:symbol _Z17xmp3_CalcBitsUsedP14_BitStreamInfoPhi graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z17xmp3_CalcBitsUsedP14_BitStreamInfoPhi }
+global MALLOC32
+array set MALLOC32 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC26 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC198 symbol:bySymbol:symbol _Z19xmp3_UnpackSideInfoP11_MP3DecInfoPh graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z19xmp3_UnpackSideInfoP11_MP3DecInfoPh }
+global MALLOC33
+array set MALLOC33 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC26 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC198 symbol:bySymbol:symbol _Z22xmp3_UnpackFrameHeaderP11_MP3DecInfoPh graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z22xmp3_UnpackFrameHeaderP11_MP3DecInfoPh }
+global MALLOC34
+array set MALLOC34 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC26 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC206 symbol:bySymbol:symbol _Z24xmp3_SetBitstreamPointerP14_BitStreamInfoiPh graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z24xmp3_SetBitstreamPointerP14_BitStreamInfoiPh }
+global MALLOC35
+array set MALLOC35 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC28 assoc:byRequired_Sym_Link:whole_ref MALLOC193 symbol:bySymbol:symbol xmp3_bitrateTab graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_bitrateTab assoc:byRequired_Sym_Link:key xmp3_bitrateTab }
+global MALLOC36
+array set MALLOC36 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC28 assoc:byRequired_Sym_Link:whole_ref MALLOC193 symbol:bySymbol:symbol xmp3_samplerateTab graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_samplerateTab assoc:byRequired_Sym_Link:key xmp3_samplerateTab }
+global MALLOC37
+array set MALLOC37 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC28 assoc:byRequired_Sym_Link:whole_ref MALLOC193 symbol:bySymbol:symbol xmp3_samplesPerFrameTab graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_samplesPerFrameTab assoc:byRequired_Sym_Link:key xmp3_samplesPerFrameTab }
+global MALLOC38
+array set MALLOC38 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC28 assoc:byRequired_Sym_Link:whole_ref MALLOC193 symbol:bySymbol:symbol xmp3_sfBandTable graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_sfBandTable assoc:byRequired_Sym_Link:key xmp3_sfBandTable }
+global MALLOC39
+array set MALLOC39 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC28 assoc:byRequired_Sym_Link:whole_ref MALLOC193 symbol:bySymbol:symbol xmp3_sideBytesTab graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_sideBytesTab assoc:byRequired_Sym_Link:key xmp3_sideBytesTab }
+global MALLOC40
+array set MALLOC40 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC28 assoc:byRequired_Sym_Link:whole_ref MALLOC193 symbol:bySymbol:symbol xmp3_slotTab graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_slotTab assoc:byRequired_Sym_Link:key xmp3_slotTab }
+global MALLOC41
+array set MALLOC41 { assoc:byModule_Property:part_list {MALLOC42 MALLOC43 MALLOC44} assoc:byCorepanel_Module:whole_ref MALLOC0 symbol:bySymbol:symbol buffers graph:byModule_Link:to_edge_list MALLOC199 graph:byModule_Link:from_edge_list {} assoc:byCorepanel_Module:key buffers }
+global MALLOC42
+array set MALLOC42 { assoc:byModule_Property:whole_ref MALLOC41 symbol:bySymbol:symbol GLOBAL assoc:byModule_Property:key GLOBAL assoc:bySym_Property:part_list {MALLOC45 MALLOC46} }
+global MALLOC43
+array set MALLOC43 { assoc:byModule_Property:whole_ref MALLOC41 symbol:bySymbol:symbol LOCAL assoc:byModule_Property:key LOCAL assoc:bySym_Property:part_list {MALLOC47 MALLOC48 MALLOC49 MALLOC50 MALLOC51 MALLOC52 MALLOC53 MALLOC54} }
+global MALLOC44
+array set MALLOC44 { assoc:byModule_Property:whole_ref MALLOC41 symbol:bySymbol:symbol REQUIRED assoc:byModule_Property:key REQUIRED assoc:bySym_Property:part_list {} }
+global MALLOC45
+array set MALLOC45 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC42 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC199 symbol:bySymbol:symbol _Z16xmp3_FreeBuffersP11_MP3DecInfo graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z16xmp3_FreeBuffersP11_MP3DecInfo }
+global MALLOC46
+array set MALLOC46 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC42 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC199 symbol:bySymbol:symbol _Z20xmp3_AllocateBuffersv graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z20xmp3_AllocateBuffersv }
+global MALLOC47
+array set MALLOC47 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC43 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZZ20xmp3_AllocateBuffersvE12s_mp3DecInfo graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZZ20xmp3_AllocateBuffersvE12s_mp3DecInfo }
+global MALLOC48
+array set MALLOC48 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC43 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZZ20xmp3_AllocateBuffersvE2di graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZZ20xmp3_AllocateBuffersvE2di }
+global MALLOC49
+array set MALLOC49 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC43 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZZ20xmp3_AllocateBuffersvE2fh graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZZ20xmp3_AllocateBuffersvE2fh }
+global MALLOC50
+array set MALLOC50 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC43 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZZ20xmp3_AllocateBuffersvE2hi graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZZ20xmp3_AllocateBuffersvE2hi }
+global MALLOC51
+array set MALLOC51 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC43 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZZ20xmp3_AllocateBuffersvE2mi graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZZ20xmp3_AllocateBuffersvE2mi }
+global MALLOC52
+array set MALLOC52 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC43 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZZ20xmp3_AllocateBuffersvE2si graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZZ20xmp3_AllocateBuffersvE2si }
+global MALLOC53
+array set MALLOC53 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC43 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZZ20xmp3_AllocateBuffersvE3sbi graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZZ20xmp3_AllocateBuffersvE3sbi }
+global MALLOC54
+array set MALLOC54 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC43 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZZ20xmp3_AllocateBuffersvE3sfi graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZZ20xmp3_AllocateBuffersvE3sfi }
+global MALLOC55
+array set MALLOC55 { assoc:byModule_Property:part_list {MALLOC56 MALLOC57 MALLOC58} assoc:byCorepanel_Module:whole_ref MALLOC0 symbol:bySymbol:symbol dct32 graph:byModule_Link:to_edge_list MALLOC208 graph:byModule_Link:from_edge_list {} assoc:byCorepanel_Module:key dct32 }
+global MALLOC56
+array set MALLOC56 { assoc:byModule_Property:whole_ref MALLOC55 symbol:bySymbol:symbol GLOBAL assoc:byModule_Property:key GLOBAL assoc:bySym_Property:part_list MALLOC59 }
+global MALLOC57
+array set MALLOC57 { assoc:byModule_Property:whole_ref MALLOC55 symbol:bySymbol:symbol LOCAL assoc:byModule_Property:key LOCAL assoc:bySym_Property:part_list MALLOC60 }
+global MALLOC58
+array set MALLOC58 { assoc:byModule_Property:whole_ref MALLOC55 symbol:bySymbol:symbol REQUIRED assoc:byModule_Property:key REQUIRED assoc:bySym_Property:part_list {} }
+global MALLOC59
+array set MALLOC59 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC56 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC208 symbol:bySymbol:symbol _Z11xmp3_FDCT32PiS_iii graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z11xmp3_FDCT32PiS_iii }
+global MALLOC60
+array set MALLOC60 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC57 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZL6dcttab graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZL6dcttab }
+global MALLOC61
+array set MALLOC61 { assoc:byModule_Property:part_list {MALLOC62 MALLOC63 MALLOC64} assoc:byCorepanel_Module:whole_ref MALLOC0 symbol:bySymbol:symbol dequant graph:byModule_Link:to_edge_list MALLOC200 graph:byModule_Link:from_edge_list {MALLOC194 MALLOC195} assoc:byCorepanel_Module:key dequant }
+global MALLOC62
+array set MALLOC62 { assoc:byModule_Property:whole_ref MALLOC61 symbol:bySymbol:symbol GLOBAL assoc:byModule_Property:key GLOBAL assoc:bySym_Property:part_list MALLOC65 }
+global MALLOC63
+array set MALLOC63 { assoc:byModule_Property:whole_ref MALLOC61 symbol:bySymbol:symbol LOCAL assoc:byModule_Property:key LOCAL assoc:bySym_Property:part_list {} }
+global MALLOC64
+array set MALLOC64 { assoc:byModule_Property:whole_ref MALLOC61 symbol:bySymbol:symbol REQUIRED assoc:byModule_Property:key REQUIRED assoc:bySym_Property:part_list {MALLOC66 MALLOC67 MALLOC68 MALLOC69} }
+global MALLOC65
+array set MALLOC65 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC62 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC200 symbol:bySymbol:symbol _Z15xmp3_DequantizeP11_MP3DecInfoi graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z15xmp3_DequantizeP11_MP3DecInfoi }
+global MALLOC66
+array set MALLOC66 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC64 assoc:byRequired_Sym_Link:whole_ref MALLOC195 symbol:bySymbol:symbol _Z16xmp3_MidSideProcPA576_iiPi graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z16xmp3_MidSideProcPA576_iiPi assoc:byRequired_Sym_Link:key _Z16xmp3_MidSideProcPA576_iiPi }
+global MALLOC67
+array set MALLOC67 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC64 assoc:byRequired_Sym_Link:whole_ref MALLOC194 symbol:bySymbol:symbol _Z19xmp3_DequantChannelPiS_S_P12_FrameHeaderP12_SideInfoSubP19_ScaleFactorInfoSubP16CriticalBandInfo graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z19xmp3_DequantChannelPiS_S_P12_FrameHeaderP12_SideInfoSubP19_ScaleFactorInfoSubP16CriticalBandInfo assoc:byRequired_Sym_Link:key _Z19xmp3_DequantChannelPiS_S_P12_FrameHeaderP12_SideInfoSubP19_ScaleFactorInfoSubP16CriticalBandInfo }
+global MALLOC68
+array set MALLOC68 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC64 assoc:byRequired_Sym_Link:whole_ref MALLOC195 symbol:bySymbol:symbol _Z23xmp3_IntensityProcMPEG1PA576_iiP12_FrameHeaderP19_ScaleFactorInfoSubP16CriticalBandInfoiiPi graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z23xmp3_IntensityProcMPEG1PA576_iiP12_FrameHeaderP19_ScaleFactorInfoSubP16CriticalBandInfoiiPi assoc:byRequired_Sym_Link:key _Z23xmp3_IntensityProcMPEG1PA576_iiP12_FrameHeaderP19_ScaleFactorInfoSubP16CriticalBandInfoiiPi }
+global MALLOC69
+array set MALLOC69 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC64 assoc:byRequired_Sym_Link:whole_ref MALLOC195 symbol:bySymbol:symbol _Z23xmp3_IntensityProcMPEG2PA576_iiP12_FrameHeaderP19_ScaleFactorInfoSubP16CriticalBandInfoP14_ScaleFactorJSiiPi graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z23xmp3_IntensityProcMPEG2PA576_iiP12_FrameHeaderP19_ScaleFactorInfoSubP16CriticalBandInfoP14_ScaleFactorJSiiPi assoc:byRequired_Sym_Link:key _Z23xmp3_IntensityProcMPEG2PA576_iiP12_FrameHeaderP19_ScaleFactorInfoSubP16CriticalBandInfoP14_ScaleFactorJSiiPi }
+global MALLOC70
+array set MALLOC70 { assoc:byModule_Property:part_list {MALLOC71 MALLOC72 MALLOC73} assoc:byCorepanel_Module:whole_ref MALLOC0 symbol:bySymbol:symbol dqchan graph:byModule_Link:to_edge_list MALLOC194 graph:byModule_Link:from_edge_list {} assoc:byCorepanel_Module:key dqchan }
+global MALLOC71
+array set MALLOC71 { assoc:byModule_Property:whole_ref MALLOC70 symbol:bySymbol:symbol GLOBAL assoc:byModule_Property:key GLOBAL assoc:bySym_Property:part_list MALLOC74 }
+global MALLOC72
+array set MALLOC72 { assoc:byModule_Property:whole_ref MALLOC70 symbol:bySymbol:symbol LOCAL assoc:byModule_Property:key LOCAL assoc:bySym_Property:part_list {MALLOC75 MALLOC76 MALLOC77 MALLOC78 MALLOC79 MALLOC80 MALLOC81} }
+global MALLOC73
+array set MALLOC73 { assoc:byModule_Property:whole_ref MALLOC70 symbol:bySymbol:symbol REQUIRED assoc:byModule_Property:key REQUIRED assoc:bySym_Property:part_list {} }
+global MALLOC74
+array set MALLOC74 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC71 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC194 symbol:bySymbol:symbol _Z19xmp3_DequantChannelPiS_S_P12_FrameHeaderP12_SideInfoSubP19_ScaleFactorInfoSubP16CriticalBandInfo graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z19xmp3_DequantChannelPiS_S_P12_FrameHeaderP12_SideInfoSubP19_ScaleFactorInfoSubP16CriticalBandInfo }
+global MALLOC75
+array set MALLOC75 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC72 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZL12DequantBlockPiS_ii graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _ZL12DequantBlockPiS_ii }
+global MALLOC76
+array set MALLOC76 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC72 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZL5pow14 graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZL5pow14 }
+global MALLOC77
+array set MALLOC77 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC72 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZL5pow43 graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZL5pow43 }
+global MALLOC78
+array set MALLOC78 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC72 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZL6preTab graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZL6preTab }
+global MALLOC79
+array set MALLOC79 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC72 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZL7pow2exp graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZL7pow2exp }
+global MALLOC80
+array set MALLOC80 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC72 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZL8pow2frac graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZL8pow2frac }
+global MALLOC81
+array set MALLOC81 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC72 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZL8pow43_14 graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZL8pow43_14 }
+global MALLOC82
+array set MALLOC82 { assoc:byModule_Property:part_list {MALLOC83 MALLOC84 MALLOC85} assoc:byCorepanel_Module:whole_ref MALLOC0 symbol:bySymbol:symbol huffman graph:byModule_Link:to_edge_list MALLOC201 graph:byModule_Link:from_edge_list MALLOC196 assoc:byCorepanel_Module:key huffman }
+global MALLOC83
+array set MALLOC83 { assoc:byModule_Property:whole_ref MALLOC82 symbol:bySymbol:symbol GLOBAL assoc:byModule_Property:key GLOBAL assoc:bySym_Property:part_list MALLOC86 }
+global MALLOC84
+array set MALLOC84 { assoc:byModule_Property:whole_ref MALLOC82 symbol:bySymbol:symbol LOCAL assoc:byModule_Property:key LOCAL assoc:bySym_Property:part_list {} }
+global MALLOC85
+array set MALLOC85 { assoc:byModule_Property:whole_ref MALLOC82 symbol:bySymbol:symbol REQUIRED assoc:byModule_Property:key REQUIRED assoc:bySym_Property:part_list {MALLOC87 MALLOC88 MALLOC89 MALLOC90 MALLOC91 MALLOC92} }
+global MALLOC86
+array set MALLOC86 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC83 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC201 symbol:bySymbol:symbol _Z18xmp3_DecodeHuffmanP11_MP3DecInfoPhPiiii graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z18xmp3_DecodeHuffmanP11_MP3DecInfoPhPiiii }
+global MALLOC87
+array set MALLOC87 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC85 assoc:byRequired_Sym_Link:whole_ref MALLOC196 symbol:bySymbol:symbol xmp3_huffTabLookup graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_huffTabLookup assoc:byRequired_Sym_Link:key xmp3_huffTabLookup }
+global MALLOC88
+array set MALLOC88 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC85 assoc:byRequired_Sym_Link:whole_ref MALLOC196 symbol:bySymbol:symbol xmp3_huffTabOffset graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_huffTabOffset assoc:byRequired_Sym_Link:key xmp3_huffTabOffset }
+global MALLOC89
+array set MALLOC89 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC85 assoc:byRequired_Sym_Link:whole_ref MALLOC196 symbol:bySymbol:symbol xmp3_huffTable graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_huffTable assoc:byRequired_Sym_Link:key xmp3_huffTable }
+global MALLOC90
+array set MALLOC90 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC85 assoc:byRequired_Sym_Link:whole_ref MALLOC196 symbol:bySymbol:symbol xmp3_quadTabMaxBits graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_quadTabMaxBits assoc:byRequired_Sym_Link:key xmp3_quadTabMaxBits }
+global MALLOC91
+array set MALLOC91 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC85 assoc:byRequired_Sym_Link:whole_ref MALLOC196 symbol:bySymbol:symbol xmp3_quadTabOffset graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_quadTabOffset assoc:byRequired_Sym_Link:key xmp3_quadTabOffset }
+global MALLOC92
+array set MALLOC92 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC85 assoc:byRequired_Sym_Link:whole_ref MALLOC196 symbol:bySymbol:symbol xmp3_quadTable graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_quadTable assoc:byRequired_Sym_Link:key xmp3_quadTable }
+global MALLOC93
+array set MALLOC93 { assoc:byModule_Property:part_list {MALLOC94 MALLOC95 MALLOC96} assoc:byCorepanel_Module:whole_ref MALLOC0 symbol:bySymbol:symbol hufftabs graph:byModule_Link:to_edge_list MALLOC196 graph:byModule_Link:from_edge_list {} assoc:byCorepanel_Module:key hufftabs }
+global MALLOC94
+array set MALLOC94 { assoc:byModule_Property:whole_ref MALLOC93 symbol:bySymbol:symbol GLOBAL assoc:byModule_Property:key GLOBAL assoc:bySym_Property:part_list {MALLOC97 MALLOC98 MALLOC99 MALLOC100 MALLOC101 MALLOC102} }
+global MALLOC95
+array set MALLOC95 { assoc:byModule_Property:whole_ref MALLOC93 symbol:bySymbol:symbol LOCAL assoc:byModule_Property:key LOCAL assoc:bySym_Property:part_list {} }
+global MALLOC96
+array set MALLOC96 { assoc:byModule_Property:whole_ref MALLOC93 symbol:bySymbol:symbol REQUIRED assoc:byModule_Property:key REQUIRED assoc:bySym_Property:part_list {} }
+global MALLOC97
+array set MALLOC97 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC94 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC196 symbol:bySymbol:symbol xmp3_huffTabLookup graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_huffTabLookup }
+global MALLOC98
+array set MALLOC98 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC94 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC196 symbol:bySymbol:symbol xmp3_huffTabOffset graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_huffTabOffset }
+global MALLOC99
+array set MALLOC99 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC94 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC196 symbol:bySymbol:symbol xmp3_huffTable graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_huffTable }
+global MALLOC100
+array set MALLOC100 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC94 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC196 symbol:bySymbol:symbol xmp3_quadTabMaxBits graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_quadTabMaxBits }
+global MALLOC101
+array set MALLOC101 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC94 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC196 symbol:bySymbol:symbol xmp3_quadTabOffset graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_quadTabOffset }
+global MALLOC102
+array set MALLOC102 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC94 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC196 symbol:bySymbol:symbol xmp3_quadTable graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_quadTable }
+global MALLOC103
+array set MALLOC103 { assoc:byModule_Property:part_list {MALLOC104 MALLOC105 MALLOC106} assoc:byCorepanel_Module:whole_ref MALLOC0 symbol:bySymbol:symbol imdct graph:byModule_Link:to_edge_list MALLOC202 graph:byModule_Link:from_edge_list MALLOC197 assoc:byCorepanel_Module:key imdct }
+global MALLOC104
+array set MALLOC104 { assoc:byModule_Property:whole_ref MALLOC103 symbol:bySymbol:symbol GLOBAL assoc:byModule_Property:key GLOBAL assoc:bySym_Property:part_list MALLOC107 }
+global MALLOC105
+array set MALLOC105 { assoc:byModule_Property:whole_ref MALLOC103 symbol:bySymbol:symbol LOCAL assoc:byModule_Property:key LOCAL assoc:bySym_Property:part_list {MALLOC108 MALLOC109} }
+global MALLOC106
+array set MALLOC106 { assoc:byModule_Property:whole_ref MALLOC103 symbol:bySymbol:symbol REQUIRED assoc:byModule_Property:key REQUIRED assoc:bySym_Property:part_list {MALLOC110 MALLOC111} }
+global MALLOC107
+array set MALLOC107 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC104 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC202 symbol:bySymbol:symbol _Z10xmp3_IMDCTP11_MP3DecInfoii graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z10xmp3_IMDCTP11_MP3DecInfoii }
+global MALLOC108
+array set MALLOC108 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC105 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZL11WinPreviousPiS_i.part.0 graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _ZL11WinPreviousPiS_i.part.0 }
+global MALLOC109
+array set MALLOC109 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC105 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZL17FreqInvertRescalePiS_ii graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _ZL17FreqInvertRescalePiS_ii }
+global MALLOC110
+array set MALLOC110 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC106 assoc:byRequired_Sym_Link:whole_ref MALLOC197 symbol:bySymbol:symbol xmp3_csa graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_csa assoc:byRequired_Sym_Link:key xmp3_csa }
+global MALLOC111
+array set MALLOC111 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC106 assoc:byRequired_Sym_Link:whole_ref MALLOC197 symbol:bySymbol:symbol xmp3_imdctWin graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_imdctWin assoc:byRequired_Sym_Link:key xmp3_imdctWin }
+global MALLOC112
+array set MALLOC112 { assoc:byModule_Property:part_list {MALLOC113 MALLOC114 MALLOC115} assoc:byCorepanel_Module:whole_ref MALLOC0 symbol:bySymbol:symbol mp3dec graph:byModule_Link:to_edge_list MALLOC192 graph:byModule_Link:from_edge_list {MALLOC198 MALLOC199 MALLOC200 MALLOC201 MALLOC202 MALLOC203 MALLOC204 MALLOC205} assoc:byCorepanel_Module:key mp3dec }
+global MALLOC113
+array set MALLOC113 { assoc:byModule_Property:whole_ref MALLOC112 symbol:bySymbol:symbol GLOBAL assoc:byModule_Property:key GLOBAL assoc:bySym_Property:part_list {MALLOC116 MALLOC117 MALLOC118 MALLOC119 MALLOC120 MALLOC121} }
+global MALLOC114
+array set MALLOC114 { assoc:byModule_Property:whole_ref MALLOC112 symbol:bySymbol:symbol LOCAL assoc:byModule_Property:key LOCAL assoc:bySym_Property:part_list {} }
+global MALLOC115
+array set MALLOC115 { assoc:byModule_Property:whole_ref MALLOC112 symbol:bySymbol:symbol REQUIRED assoc:byModule_Property:key REQUIRED assoc:bySym_Property:part_list {MALLOC122 MALLOC123 MALLOC124 MALLOC125 MALLOC126 MALLOC127 MALLOC128 MALLOC129 MALLOC130 MALLOC131 MALLOC132 MALLOC133 MALLOC134} }
+global MALLOC116
+array set MALLOC116 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC113 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC192 symbol:bySymbol:symbol MP3Decode graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key MP3Decode }
+global MALLOC117
+array set MALLOC117 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC113 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC192 symbol:bySymbol:symbol MP3FindSyncWord graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key MP3FindSyncWord }
+global MALLOC118
+array set MALLOC118 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC113 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {} symbol:bySymbol:symbol MP3FreeDecoder graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key MP3FreeDecoder }
+global MALLOC119
+array set MALLOC119 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC113 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {} symbol:bySymbol:symbol MP3GetLastFrameInfo graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key MP3GetLastFrameInfo }
+global MALLOC120
+array set MALLOC120 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC113 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC192 symbol:bySymbol:symbol MP3GetNextFrameInfo graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key MP3GetNextFrameInfo }
+global MALLOC121
+array set MALLOC121 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC113 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC192 symbol:bySymbol:symbol MP3InitDecoder graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key MP3InitDecoder }
+global MALLOC122
+array set MALLOC122 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC115 assoc:byRequired_Sym_Link:whole_ref MALLOC202 symbol:bySymbol:symbol _Z10xmp3_IMDCTP11_MP3DecInfoii graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z10xmp3_IMDCTP11_MP3DecInfoii assoc:byRequired_Sym_Link:key _Z10xmp3_IMDCTP11_MP3DecInfoii }
+global MALLOC123
+array set MALLOC123 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC115 assoc:byRequired_Sym_Link:whole_ref MALLOC205 symbol:bySymbol:symbol _Z12xmp3_SubbandP11_MP3DecInfoPs graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z12xmp3_SubbandP11_MP3DecInfoPs assoc:byRequired_Sym_Link:key _Z12xmp3_SubbandP11_MP3DecInfoPs }
+global MALLOC124
+array set MALLOC124 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC115 assoc:byRequired_Sym_Link:whole_ref MALLOC200 symbol:bySymbol:symbol _Z15xmp3_DequantizeP11_MP3DecInfoi graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z15xmp3_DequantizeP11_MP3DecInfoi assoc:byRequired_Sym_Link:key _Z15xmp3_DequantizeP11_MP3DecInfoi }
+global MALLOC125
+array set MALLOC125 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC115 assoc:byRequired_Sym_Link:whole_ref MALLOC198 symbol:bySymbol:symbol _Z16xmp3_CheckPadBitP11_MP3DecInfo graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z16xmp3_CheckPadBitP11_MP3DecInfo assoc:byRequired_Sym_Link:key _Z16xmp3_CheckPadBitP11_MP3DecInfo }
+global MALLOC126
+array set MALLOC126 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC115 assoc:byRequired_Sym_Link:whole_ref MALLOC199 symbol:bySymbol:symbol _Z16xmp3_FreeBuffersP11_MP3DecInfo graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z16xmp3_FreeBuffersP11_MP3DecInfo assoc:byRequired_Sym_Link:key _Z16xmp3_FreeBuffersP11_MP3DecInfo }
+global MALLOC127
+array set MALLOC127 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC115 assoc:byRequired_Sym_Link:whole_ref MALLOC201 symbol:bySymbol:symbol _Z18xmp3_DecodeHuffmanP11_MP3DecInfoPhPiiii graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z18xmp3_DecodeHuffmanP11_MP3DecInfoPhPiiii assoc:byRequired_Sym_Link:key _Z18xmp3_DecodeHuffmanP11_MP3DecInfoPhPiiii }
+global MALLOC128
+array set MALLOC128 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC115 assoc:byRequired_Sym_Link:whole_ref MALLOC198 symbol:bySymbol:symbol _Z19xmp3_UnpackSideInfoP11_MP3DecInfoPh graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z19xmp3_UnpackSideInfoP11_MP3DecInfoPh assoc:byRequired_Sym_Link:key _Z19xmp3_UnpackSideInfoP11_MP3DecInfoPh }
+global MALLOC129
+array set MALLOC129 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC115 assoc:byRequired_Sym_Link:whole_ref MALLOC199 symbol:bySymbol:symbol _Z20xmp3_AllocateBuffersv graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z20xmp3_AllocateBuffersv assoc:byRequired_Sym_Link:key _Z20xmp3_AllocateBuffersv }
+global MALLOC130
+array set MALLOC130 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC115 assoc:byRequired_Sym_Link:whole_ref MALLOC198 symbol:bySymbol:symbol _Z22xmp3_UnpackFrameHeaderP11_MP3DecInfoPh graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z22xmp3_UnpackFrameHeaderP11_MP3DecInfoPh assoc:byRequired_Sym_Link:key _Z22xmp3_UnpackFrameHeaderP11_MP3DecInfoPh }
+global MALLOC131
+array set MALLOC131 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC115 assoc:byRequired_Sym_Link:whole_ref MALLOC204 symbol:bySymbol:symbol _Z23xmp3_UnpackScaleFactorsP11_MP3DecInfoPhPiiii graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z23xmp3_UnpackScaleFactorsP11_MP3DecInfoPhPiiii assoc:byRequired_Sym_Link:key _Z23xmp3_UnpackScaleFactorsP11_MP3DecInfoPhPiiii }
+global MALLOC132
+array set MALLOC132 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC115 assoc:byRequired_Sym_Link:whole_ref {} symbol:bySymbol:symbol memcpy graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key memcpy assoc:byRequired_Sym_Link:key memcpy }
+global MALLOC133
+array set MALLOC133 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC115 assoc:byRequired_Sym_Link:whole_ref {} symbol:bySymbol:symbol memmove graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key memmove assoc:byRequired_Sym_Link:key memmove }
+global MALLOC134
+array set MALLOC134 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC115 assoc:byRequired_Sym_Link:whole_ref MALLOC203 symbol:bySymbol:symbol xmp3_samplesPerFrameTab graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_samplesPerFrameTab assoc:byRequired_Sym_Link:key xmp3_samplesPerFrameTab }
+global MALLOC135
+array set MALLOC135 { assoc:byModule_Property:part_list {MALLOC136 MALLOC137 MALLOC138} assoc:byCorepanel_Module:whole_ref MALLOC0 symbol:bySymbol:symbol mp3tabs graph:byModule_Link:to_edge_list {MALLOC193 MALLOC203} graph:byModule_Link:from_edge_list {} assoc:byCorepanel_Module:key mp3tabs }
+global MALLOC136
+array set MALLOC136 { assoc:byModule_Property:whole_ref MALLOC135 symbol:bySymbol:symbol GLOBAL assoc:byModule_Property:key GLOBAL assoc:bySym_Property:part_list {MALLOC139 MALLOC140 MALLOC141 MALLOC142 MALLOC143 MALLOC144 MALLOC145} }
+global MALLOC137
+array set MALLOC137 { assoc:byModule_Property:whole_ref MALLOC135 symbol:bySymbol:symbol LOCAL assoc:byModule_Property:key LOCAL assoc:bySym_Property:part_list {} }
+global MALLOC138
+array set MALLOC138 { assoc:byModule_Property:whole_ref MALLOC135 symbol:bySymbol:symbol REQUIRED assoc:byModule_Property:key REQUIRED assoc:bySym_Property:part_list {} }
+global MALLOC139
+array set MALLOC139 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC136 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC193 symbol:bySymbol:symbol xmp3_bitrateTab graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_bitrateTab }
+global MALLOC140
+array set MALLOC140 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC136 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {} symbol:bySymbol:symbol xmp3_bitsPerSlotTab graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_bitsPerSlotTab }
+global MALLOC141
+array set MALLOC141 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC136 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC193 symbol:bySymbol:symbol xmp3_samplerateTab graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_samplerateTab }
+global MALLOC142
+array set MALLOC142 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC136 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {MALLOC193 MALLOC203} symbol:bySymbol:symbol xmp3_samplesPerFrameTab graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_samplesPerFrameTab }
+global MALLOC143
+array set MALLOC143 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC136 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC193 symbol:bySymbol:symbol xmp3_sfBandTable graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_sfBandTable }
+global MALLOC144
+array set MALLOC144 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC136 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC193 symbol:bySymbol:symbol xmp3_sideBytesTab graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_sideBytesTab }
+global MALLOC145
+array set MALLOC145 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC136 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC193 symbol:bySymbol:symbol xmp3_slotTab graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_slotTab }
+global MALLOC146
+array set MALLOC146 { assoc:byModule_Property:part_list {MALLOC147 MALLOC148 MALLOC149} assoc:byCorepanel_Module:whole_ref MALLOC0 symbol:bySymbol:symbol polyphase graph:byModule_Link:to_edge_list MALLOC209 graph:byModule_Link:from_edge_list {} assoc:byCorepanel_Module:key polyphase }
+global MALLOC147
+array set MALLOC147 { assoc:byModule_Property:whole_ref MALLOC146 symbol:bySymbol:symbol GLOBAL assoc:byModule_Property:key GLOBAL assoc:bySym_Property:part_list {MALLOC150 MALLOC151} }
+global MALLOC148
+array set MALLOC148 { assoc:byModule_Property:whole_ref MALLOC146 symbol:bySymbol:symbol LOCAL assoc:byModule_Property:key LOCAL assoc:bySym_Property:part_list {} }
+global MALLOC149
+array set MALLOC149 { assoc:byModule_Property:whole_ref MALLOC146 symbol:bySymbol:symbol REQUIRED assoc:byModule_Property:key REQUIRED assoc:bySym_Property:part_list {} }
+global MALLOC150
+array set MALLOC150 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC147 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC209 symbol:bySymbol:symbol xmp3_PolyphaseMono graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key xmp3_PolyphaseMono }
+global MALLOC151
+array set MALLOC151 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC147 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC209 symbol:bySymbol:symbol xmp3_PolyphaseStereo graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key xmp3_PolyphaseStereo }
+global MALLOC152
+array set MALLOC152 { assoc:byModule_Property:part_list {MALLOC153 MALLOC154 MALLOC155} assoc:byCorepanel_Module:whole_ref MALLOC0 symbol:bySymbol:symbol scalfact graph:byModule_Link:to_edge_list MALLOC204 graph:byModule_Link:from_edge_list MALLOC206 assoc:byCorepanel_Module:key scalfact }
+global MALLOC153
+array set MALLOC153 { assoc:byModule_Property:whole_ref MALLOC152 symbol:bySymbol:symbol GLOBAL assoc:byModule_Property:key GLOBAL assoc:bySym_Property:part_list MALLOC158 }
+global MALLOC154
+array set MALLOC154 { assoc:byModule_Property:whole_ref MALLOC152 symbol:bySymbol:symbol LOCAL assoc:byModule_Property:key LOCAL assoc:bySym_Property:part_list {MALLOC160 MALLOC161} }
+global MALLOC155
+array set MALLOC155 { assoc:byModule_Property:whole_ref MALLOC152 symbol:bySymbol:symbol REQUIRED assoc:byModule_Property:key REQUIRED assoc:bySym_Property:part_list {MALLOC156 MALLOC157 MALLOC159} }
+global MALLOC156
+array set MALLOC156 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC155 assoc:byRequired_Sym_Link:whole_ref MALLOC206 symbol:bySymbol:symbol _Z12xmp3_GetBitsP14_BitStreamInfoi graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z12xmp3_GetBitsP14_BitStreamInfoi assoc:byRequired_Sym_Link:key _Z12xmp3_GetBitsP14_BitStreamInfoi }
+global MALLOC157
+array set MALLOC157 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC155 assoc:byRequired_Sym_Link:whole_ref MALLOC206 symbol:bySymbol:symbol _Z17xmp3_CalcBitsUsedP14_BitStreamInfoPhi graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z17xmp3_CalcBitsUsedP14_BitStreamInfoPhi assoc:byRequired_Sym_Link:key _Z17xmp3_CalcBitsUsedP14_BitStreamInfoPhi }
+global MALLOC158
+array set MALLOC158 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC153 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC204 symbol:bySymbol:symbol _Z23xmp3_UnpackScaleFactorsP11_MP3DecInfoPhPiiii graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z23xmp3_UnpackScaleFactorsP11_MP3DecInfoPhPiiii }
+global MALLOC159
+array set MALLOC159 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC155 assoc:byRequired_Sym_Link:whole_ref MALLOC206 symbol:bySymbol:symbol _Z24xmp3_SetBitstreamPointerP14_BitStreamInfoiPh graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z24xmp3_SetBitstreamPointerP14_BitStreamInfoiPh assoc:byRequired_Sym_Link:key _Z24xmp3_SetBitstreamPointerP14_BitStreamInfoiPh }
+global MALLOC160
+array set MALLOC160 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC154 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZL5NRTab graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZL5NRTab }
+global MALLOC161
+array set MALLOC161 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC154 graph:bySymbol_Depend:to_edge_list {} symbol:bySymbol:symbol _ZL8SFLenTab graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key _ZL8SFLenTab }
+global MALLOC162
+array set MALLOC162 { assoc:byModule_Property:part_list {MALLOC163 MALLOC164 MALLOC165} assoc:byCorepanel_Module:whole_ref MALLOC0 symbol:bySymbol:symbol stproc graph:byModule_Link:to_edge_list MALLOC195 graph:byModule_Link:from_edge_list MALLOC207 assoc:byCorepanel_Module:key stproc }
+global MALLOC163
+array set MALLOC163 { assoc:byModule_Property:whole_ref MALLOC162 symbol:bySymbol:symbol GLOBAL assoc:byModule_Property:key GLOBAL assoc:bySym_Property:part_list {MALLOC166 MALLOC167 MALLOC168} }
+global MALLOC164
+array set MALLOC164 { assoc:byModule_Property:whole_ref MALLOC162 symbol:bySymbol:symbol LOCAL assoc:byModule_Property:key LOCAL assoc:bySym_Property:part_list {} }
+global MALLOC165
+array set MALLOC165 { assoc:byModule_Property:whole_ref MALLOC162 symbol:bySymbol:symbol REQUIRED assoc:byModule_Property:key REQUIRED assoc:bySym_Property:part_list {MALLOC169 MALLOC170 MALLOC171} }
+global MALLOC166
+array set MALLOC166 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC163 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC195 symbol:bySymbol:symbol _Z16xmp3_MidSideProcPA576_iiPi graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z16xmp3_MidSideProcPA576_iiPi }
+global MALLOC167
+array set MALLOC167 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC163 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC195 symbol:bySymbol:symbol _Z23xmp3_IntensityProcMPEG1PA576_iiP12_FrameHeaderP19_ScaleFactorInfoSubP16CriticalBandInfoiiPi graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z23xmp3_IntensityProcMPEG1PA576_iiP12_FrameHeaderP19_ScaleFactorInfoSubP16CriticalBandInfoiiPi }
+global MALLOC168
+array set MALLOC168 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC163 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC195 symbol:bySymbol:symbol _Z23xmp3_IntensityProcMPEG2PA576_iiP12_FrameHeaderP19_ScaleFactorInfoSubP16CriticalBandInfoP14_ScaleFactorJSiiPi graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z23xmp3_IntensityProcMPEG2PA576_iiP12_FrameHeaderP19_ScaleFactorInfoSubP16CriticalBandInfoP14_ScaleFactorJSiiPi }
+global MALLOC169
+array set MALLOC169 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC165 assoc:byRequired_Sym_Link:whole_ref MALLOC207 symbol:bySymbol:symbol xmp3_ISFIIP graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_ISFIIP assoc:byRequired_Sym_Link:key xmp3_ISFIIP }
+global MALLOC170
+array set MALLOC170 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC165 assoc:byRequired_Sym_Link:whole_ref MALLOC207 symbol:bySymbol:symbol xmp3_ISFMpeg1 graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_ISFMpeg1 assoc:byRequired_Sym_Link:key xmp3_ISFMpeg1 }
+global MALLOC171
+array set MALLOC171 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC165 assoc:byRequired_Sym_Link:whole_ref MALLOC207 symbol:bySymbol:symbol xmp3_ISFMpeg2 graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_ISFMpeg2 assoc:byRequired_Sym_Link:key xmp3_ISFMpeg2 }
+global MALLOC172
+array set MALLOC172 { assoc:byModule_Property:part_list {MALLOC173 MALLOC174 MALLOC175} assoc:byCorepanel_Module:whole_ref MALLOC0 symbol:bySymbol:symbol subband graph:byModule_Link:to_edge_list MALLOC205 graph:byModule_Link:from_edge_list {MALLOC208 MALLOC209 MALLOC210} assoc:byCorepanel_Module:key subband }
+global MALLOC173
+array set MALLOC173 { assoc:byModule_Property:whole_ref MALLOC172 symbol:bySymbol:symbol GLOBAL assoc:byModule_Property:key GLOBAL assoc:bySym_Property:part_list MALLOC177 }
+global MALLOC174
+array set MALLOC174 { assoc:byModule_Property:whole_ref MALLOC172 symbol:bySymbol:symbol LOCAL assoc:byModule_Property:key LOCAL assoc:bySym_Property:part_list {} }
+global MALLOC175
+array set MALLOC175 { assoc:byModule_Property:whole_ref MALLOC172 symbol:bySymbol:symbol REQUIRED assoc:byModule_Property:key REQUIRED assoc:bySym_Property:part_list {MALLOC176 MALLOC178 MALLOC179 MALLOC180} }
+global MALLOC176
+array set MALLOC176 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC175 assoc:byRequired_Sym_Link:whole_ref MALLOC208 symbol:bySymbol:symbol _Z11xmp3_FDCT32PiS_iii graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key _Z11xmp3_FDCT32PiS_iii assoc:byRequired_Sym_Link:key _Z11xmp3_FDCT32PiS_iii }
+global MALLOC177
+array set MALLOC177 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC173 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC205 symbol:bySymbol:symbol _Z12xmp3_SubbandP11_MP3DecInfoPs graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 1 assoc:bySym_Property:key _Z12xmp3_SubbandP11_MP3DecInfoPs }
+global MALLOC178
+array set MALLOC178 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC175 assoc:byRequired_Sym_Link:whole_ref MALLOC209 symbol:bySymbol:symbol xmp3_PolyphaseMono graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_PolyphaseMono assoc:byRequired_Sym_Link:key xmp3_PolyphaseMono }
+global MALLOC179
+array set MALLOC179 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC175 assoc:byRequired_Sym_Link:whole_ref MALLOC209 symbol:bySymbol:symbol xmp3_PolyphaseStereo graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_PolyphaseStereo assoc:byRequired_Sym_Link:key xmp3_PolyphaseStereo }
+global MALLOC180
+array set MALLOC180 { graph:bySymbol_Depend:to_edge_list {} assoc:bySym_Property:whole_ref MALLOC175 assoc:byRequired_Sym_Link:whole_ref MALLOC210 symbol:bySymbol:symbol xmp3_polyCoef graph:bySymbol_Depend:from_edge_list {} assoc:bySym_Property:key xmp3_polyCoef assoc:byRequired_Sym_Link:key xmp3_polyCoef }
+global MALLOC181
+array set MALLOC181 { assoc:byModule_Property:part_list {MALLOC182 MALLOC183 MALLOC184} assoc:byCorepanel_Module:whole_ref MALLOC0 symbol:bySymbol:symbol trigtabs graph:byModule_Link:to_edge_list {MALLOC197 MALLOC207 MALLOC210} graph:byModule_Link:from_edge_list {} assoc:byCorepanel_Module:key trigtabs }
+global MALLOC182
+array set MALLOC182 { assoc:byModule_Property:whole_ref MALLOC181 symbol:bySymbol:symbol GLOBAL assoc:byModule_Property:key GLOBAL assoc:bySym_Property:part_list {MALLOC185 MALLOC186 MALLOC187 MALLOC188 MALLOC189 MALLOC190 MALLOC191} }
+global MALLOC183
+array set MALLOC183 { assoc:byModule_Property:whole_ref MALLOC181 symbol:bySymbol:symbol LOCAL assoc:byModule_Property:key LOCAL assoc:bySym_Property:part_list {} }
+global MALLOC184
+array set MALLOC184 { assoc:byModule_Property:whole_ref MALLOC181 symbol:bySymbol:symbol REQUIRED assoc:byModule_Property:key REQUIRED assoc:bySym_Property:part_list {} }
+global MALLOC185
+array set MALLOC185 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC182 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC207 symbol:bySymbol:symbol xmp3_ISFIIP graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_ISFIIP }
+global MALLOC186
+array set MALLOC186 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC182 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC207 symbol:bySymbol:symbol xmp3_ISFMpeg1 graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_ISFMpeg1 }
+global MALLOC187
+array set MALLOC187 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC182 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC207 symbol:bySymbol:symbol xmp3_ISFMpeg2 graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_ISFMpeg2 }
+global MALLOC188
+array set MALLOC188 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC182 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list {} symbol:bySymbol:symbol xmp3_coef32 graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_coef32 }
+global MALLOC189
+array set MALLOC189 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC182 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC197 symbol:bySymbol:symbol xmp3_csa graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_csa }
+global MALLOC190
+array set MALLOC190 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC182 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC197 symbol:bySymbol:symbol xmp3_imdctWin graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_imdctWin }
+global MALLOC191
+array set MALLOC191 { symboldefined:bySymbolDefined:is_bss 0 assoc:bySym_Property:whole_ref MALLOC182 graph:bySymbol_Depend:to_edge_list {} lattice:byGlobal_Sym_Link:rel_list MALLOC210 symbol:bySymbol:symbol xmp3_polyCoef graph:bySymbol_Depend:from_edge_list {} symboldefined:bySymbolDefined:is_function 0 assoc:bySym_Property:key xmp3_polyCoef }
+global MALLOC192
+array set MALLOC192 { graph:byModule_Link:to_vertex MALLOC112 assoc:byRequired_Sym_Link:part_list {MALLOC5 MALLOC6 MALLOC7 MALLOC8} graph:byModule_Link:from_vertex MALLOC1 lattice:byGlobal_Sym_Link:rel_list {MALLOC116 MALLOC117 MALLOC120 MALLOC121} }
+global MALLOC193
+array set MALLOC193 { graph:byModule_Link:to_vertex MALLOC135 assoc:byRequired_Sym_Link:part_list {MALLOC35 MALLOC36 MALLOC37 MALLOC38 MALLOC39 MALLOC40} graph:byModule_Link:from_vertex MALLOC25 lattice:byGlobal_Sym_Link:rel_list {MALLOC139 MALLOC141 MALLOC142 MALLOC143 MALLOC144 MALLOC145} }
+global MALLOC194
+array set MALLOC194 { graph:byModule_Link:to_vertex MALLOC70 assoc:byRequired_Sym_Link:part_list MALLOC67 graph:byModule_Link:from_vertex MALLOC61 lattice:byGlobal_Sym_Link:rel_list MALLOC74 }
+global MALLOC195
+array set MALLOC195 { graph:byModule_Link:to_vertex MALLOC162 assoc:byRequired_Sym_Link:part_list {MALLOC66 MALLOC68 MALLOC69} graph:byModule_Link:from_vertex MALLOC61 lattice:byGlobal_Sym_Link:rel_list {MALLOC166 MALLOC167 MALLOC168} }
+global MALLOC196
+array set MALLOC196 { graph:byModule_Link:to_vertex MALLOC93 assoc:byRequired_Sym_Link:part_list {MALLOC87 MALLOC88 MALLOC89 MALLOC90 MALLOC91 MALLOC92} graph:byModule_Link:from_vertex MALLOC82 lattice:byGlobal_Sym_Link:rel_list {MALLOC97 MALLOC98 MALLOC99 MALLOC100 MALLOC101 MALLOC102} }
+global MALLOC197
+array set MALLOC197 { graph:byModule_Link:to_vertex MALLOC181 assoc:byRequired_Sym_Link:part_list {MALLOC110 MALLOC111} graph:byModule_Link:from_vertex MALLOC103 lattice:byGlobal_Sym_Link:rel_list {MALLOC189 MALLOC190} }
+global MALLOC198
+array set MALLOC198 { graph:byModule_Link:to_vertex MALLOC25 assoc:byRequired_Sym_Link:part_list {MALLOC125 MALLOC128 MALLOC130} graph:byModule_Link:from_vertex MALLOC112 lattice:byGlobal_Sym_Link:rel_list {MALLOC30 MALLOC32 MALLOC33} }
+global MALLOC199
+array set MALLOC199 { graph:byModule_Link:to_vertex MALLOC41 assoc:byRequired_Sym_Link:part_list {MALLOC126 MALLOC129} graph:byModule_Link:from_vertex MALLOC112 lattice:byGlobal_Sym_Link:rel_list {MALLOC45 MALLOC46} }
+global MALLOC200
+array set MALLOC200 { graph:byModule_Link:to_vertex MALLOC61 assoc:byRequired_Sym_Link:part_list MALLOC124 graph:byModule_Link:from_vertex MALLOC112 lattice:byGlobal_Sym_Link:rel_list MALLOC65 }
+global MALLOC201
+array set MALLOC201 { graph:byModule_Link:to_vertex MALLOC82 assoc:byRequired_Sym_Link:part_list MALLOC127 graph:byModule_Link:from_vertex MALLOC112 lattice:byGlobal_Sym_Link:rel_list MALLOC86 }
+global MALLOC202
+array set MALLOC202 { graph:byModule_Link:to_vertex MALLOC103 assoc:byRequired_Sym_Link:part_list MALLOC122 graph:byModule_Link:from_vertex MALLOC112 lattice:byGlobal_Sym_Link:rel_list MALLOC107 }
+global MALLOC203
+array set MALLOC203 { graph:byModule_Link:to_vertex MALLOC135 assoc:byRequired_Sym_Link:part_list MALLOC134 graph:byModule_Link:from_vertex MALLOC112 lattice:byGlobal_Sym_Link:rel_list MALLOC142 }
+global MALLOC204
+array set MALLOC204 { graph:byModule_Link:to_vertex MALLOC152 assoc:byRequired_Sym_Link:part_list MALLOC131 graph:byModule_Link:from_vertex MALLOC112 lattice:byGlobal_Sym_Link:rel_list MALLOC158 }
+global MALLOC205
+array set MALLOC205 { graph:byModule_Link:to_vertex MALLOC172 assoc:byRequired_Sym_Link:part_list MALLOC123 graph:byModule_Link:from_vertex MALLOC112 lattice:byGlobal_Sym_Link:rel_list MALLOC177 }
+global MALLOC206
+array set MALLOC206 { graph:byModule_Link:to_vertex MALLOC25 assoc:byRequired_Sym_Link:part_list {MALLOC156 MALLOC157 MALLOC159} graph:byModule_Link:from_vertex MALLOC152 lattice:byGlobal_Sym_Link:rel_list {MALLOC29 MALLOC31 MALLOC34} }
+global MALLOC207
+array set MALLOC207 { graph:byModule_Link:to_vertex MALLOC181 assoc:byRequired_Sym_Link:part_list {MALLOC169 MALLOC170 MALLOC171} graph:byModule_Link:from_vertex MALLOC162 lattice:byGlobal_Sym_Link:rel_list {MALLOC185 MALLOC186 MALLOC187} }
+global MALLOC208
+array set MALLOC208 { graph:byModule_Link:to_vertex MALLOC55 assoc:byRequired_Sym_Link:part_list MALLOC176 graph:byModule_Link:from_vertex MALLOC172 lattice:byGlobal_Sym_Link:rel_list MALLOC59 }
+global MALLOC209
+array set MALLOC209 { graph:byModule_Link:to_vertex MALLOC146 assoc:byRequired_Sym_Link:part_list {MALLOC178 MALLOC179} graph:byModule_Link:from_vertex MALLOC172 lattice:byGlobal_Sym_Link:rel_list {MALLOC150 MALLOC151} }
+global MALLOC210
+array set MALLOC210 { graph:byModule_Link:to_vertex MALLOC181 assoc:byRequired_Sym_Link:part_list MALLOC180 graph:byModule_Link:from_vertex MALLOC172 lattice:byGlobal_Sym_Link:rel_list MALLOC191 }
