@@ -1,0 +1,16 @@
+ranksep="2.0 equally";
+{
+    level0 -> level1 -> level2 -> level3;
+}
+{   rank = same;
+    level0;
+}
+{   rank = same;
+    level1;
+}
+{   rank = same;
+    level2;
+}
+{   rank = same;
+    level3;
+}
