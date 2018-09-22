@@ -166,6 +166,7 @@ proc Run {filename} {
 	        }
 	        if {[string match "*(*)" $line] == 1} {
 		    append procline $line$space
+		    #puts "full match: $line"
 	            set state SCAN_OPEN_BRACE
 		    continue
 		}
@@ -176,15 +177,18 @@ proc Run {filename} {
 		set idx -1
 		foreach procname $m_proclist {
 		    set idx [string first $procname $procline]
-		    if {$idx > 0} {
+		    if {$idx >= 0} {
 			# We want to avoid the case where we match "foo"
 			# with void abc_foo(...) or abcfoo(...)
+            # Skip this check if foo is at the start of the line
 			set idx2 [expr $idx - 1]
-			set pre_char [string index $procline $idx2]
-			if {[string is alnum $pre_char] ||
-			    $pre_char == "-" || $pre_char == "_"} {	
-			    continue 
-			}
+            if {$idx2 != -1} { 
+			    set pre_char [string index $procline $idx2]
+			    if {[string is alnum $pre_char] ||
+			        $pre_char == "-" || $pre_char == "_"} {	
+			        continue 
+			    }
+            }
 			# We want to avoid the case where we match "foo"
 			# with void foo_123(...)
 			set len [string length $procname]
@@ -255,15 +259,19 @@ proc Run {filename} {
 		set idx -1
 		foreach procname $m_proclist {
 		    set idx [string first $procname $procline]
-		    if {$idx > 0} {
+		    if {$idx >= 0} {
+            #puts "procname matched: $procname"
 			# We want to avoid the case where we match "foo"
 			# with void abc_foo(...) or abcfoo(...)
+            # Skip this check if foo is at the start of the line
 			set idx2 [expr $idx - 1]
-			set pre_char [string index $procline $idx2]
-			if {[string is alnum $pre_char] ||
-			    $pre_char == "-" || $pre_char == "_"} {	
-			    continue 
-			}
+            if {$idx2 != -1} {
+			    set pre_char [string index $procline $idx2]
+			    if {[string is alnum $pre_char] ||
+			        $pre_char == "-" || $pre_char == "_"} {	
+			        continue 
+			    }
+             }
 			# We want to avoid the case where we match "foo"
 			# with void foo_123(...)
 			set len [string length $procname]
@@ -329,6 +337,7 @@ proc Run {filename} {
 		    	lappend m_markerlist $marker
 		    }
 		}
+            #puts "close brace: procname = $procname"
 	    	set procbody ""
 	    	set procname ""
 		set procline ""
