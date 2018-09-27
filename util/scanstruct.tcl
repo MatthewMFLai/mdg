@@ -58,21 +58,6 @@ proc Clear {} {
     set m_objid 0
 }
 
-
-proc DumpOrg {filename} {
-    variable m_struct
-
-    set fd [open $filename w]
-    foreach idx [array names m_struct] {
-        foreach line $m_struct($idx) {
-	  puts $fd $line
-        }
-        puts $fd ""
-    }
-    close $fd
-    return
-}
-
 proc Dump {filename selector} {
     variable m_struct
     variable m_objects
@@ -161,7 +146,7 @@ proc Run {filename} {
     set structname ""
     set openbrace "\{"
     set closebraceonly "\}"
-    set closebrace "\}\;"
+    set closebrace "\}*\;"
     set dataline ""
 
     while {[gets $fd line] > -1} {
@@ -191,24 +176,31 @@ proc Run {filename} {
 		    continue
 		}
 
-                puts $line
 		if {[string first $uscore $structname] == 0} {
                     set structname ""
 		    continue
 		}
+
+		if {[info exists m_struct($structname)]} {
+                    set structname ""
+		    continue
+		}
+                #puts $line
+
                 set m_struct($structname) ""
                 lappend m_struct($structname) $line
 		set state SCAN_STRUCT_OPEN_BRACE
 
 	    } SCAN_STRUCT_OPEN_BRACE {
                 if {[string index $line 0] == $openbrace} {
-                    puts $line
+                    #puts $line
 		    set state SCAN_STRUCT_CLOSE_BRACE
                 }
 
     	    } SCAN_STRUCT_CLOSE_BRACE {
-                if {[string first $closebrace $line 0] == 0} {
-                    puts $line
+                puts $line
+                if {[string match $closebrace $line]} {
+                    #puts $line
 		    set state SCAN_LINE_WITH_STRUCT
                     set dataline ""
                     set structname ""
@@ -223,20 +215,20 @@ proc Run {filename} {
 		if {[string first $semicolon $line] == -1} {
                     continue
                 } else {
-                    puts $dataline
+                    #puts $dataline
                     lappend m_struct($structname) [string range $dataline 0 end-1]
                     set dataline "" 
 		}
  
 	    } SCAN_SUBSTRUCT_OPEN_BRACE {
                 if {[string index $line 0] == $openbrace} {
-                    puts $line
+                    #puts $line
                     append dataline $line$space
 		    set state SCAN_SUBSTRUCT_CLOSE_BRACE
                 }
 
     	    } SCAN_SUBSTRUCT_CLOSE_BRACE {
-                puts $line
+                #puts $line
                 append dataline $line$space
                 if {[string first $closebraceonly $line 0] == 0} {
 		    set state SCAN_SUBSTRUCT_NAME
@@ -245,7 +237,7 @@ proc Run {filename} {
 
     	    } SCAN_SUBSTRUCT_NAME {
                 if {[string first $semicolon $line] > 0} {
-                    puts $line
+                    #puts $line
                     append dataline $line$space
                     lappend m_struct($structname) [string range $dataline 0 end-1]
 		    set state SCAN_STRUCT_CLOSE_BRACE
@@ -499,7 +491,7 @@ proc Create_Objects_Dot {dotfile structname} {
     append header "rankdir = \"LR\"\n"
     append header "\];\n"
     append header "node \[\n"
-    append header "fontsize = \"16\"\n"
+    append header "fontsize = \"12\"\n"
     append header "\];\n"
     append header "edge \[\n"
     append header "\];"
