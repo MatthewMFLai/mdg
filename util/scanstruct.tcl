@@ -198,8 +198,9 @@ proc Run {filename} {
                 }
 
     	    } SCAN_STRUCT_CLOSE_BRACE {
-                puts $line
-                if {[string match $closebrace $line]} {
+                # puts $line 
+                if {[string match $closebrace $line] ||
+                    [string first $closebraceonly $line] == 0} {
                     #puts $line
 		    set state SCAN_LINE_WITH_STRUCT
                     set dataline ""
