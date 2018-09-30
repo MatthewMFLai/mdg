@@ -35,13 +35,7 @@ proc view {structname} {
 
 proc load {lstdir} {
     foreach datafile [glob $lstdir/*.i] {
-        if {[string first "an_top" $datafile] != -1} {
-            continue
-        }
-        if {[string first "an_fsm" $datafile] != -1} {
-            continue
-        }
-        puts "Processing $datafile..."
+        #puts "Processing $datafile..."
         Scanstruct::Run $datafile
     }
     Scanstruct::Post_Process_Substructs
@@ -49,7 +43,40 @@ proc load {lstdir} {
     return
 }
 
+tk_setPalette SkyBlue1
+ 
 Scanstruct::Init
+
+frame .mbar -borderwidth 1 -relief raised
+pack .mbar -fill x
+
+menubutton .mbar.file -text "File" -menu .mbar.file.m
+pack .mbar.file -side left
+
+menu .mbar.file.m
+
+.mbar.file.m add command -label "Open" -command {
+    set dirname [tk_chooseDirectory]
+    if {$dirname != ""} {
+        load $dirname	
+    }
+    foreach structname [lsort [array names Scanstruct::m_struct]] {
+        .mbar.list insert end $structname
+    } 
+}	
+.mbar.file.m add command -label "Reload" -command {
+}
+.mbar.file.m add command -label "Exit" -command exit
+
+scrollbar .mbar.scroll -command ".mbar.list yview"
+listbox .mbar.list -yscroll ".mbar.scroll set" \
+	-width 40 -height 6
+pack .mbar.list .mbar.scroll -side left -fill y -expand 1
+
+bind .mbar.list <Double-1> {
+    view [selection get]
+}
+
 set c .c
 pack [canvas $c] -expand true -fill both
 set xc 0
