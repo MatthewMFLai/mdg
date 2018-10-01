@@ -61,23 +61,26 @@ menu .mbar.file.m
         load $dirname	
     }
     foreach structname [lsort [array names Scanstruct::m_struct]] {
-        .mbar.list insert end $structname
+        .mbar2.list insert end $structname
     } 
 }	
 .mbar.file.m add command -label "Reload" -command {
 }
 .mbar.file.m add command -label "Exit" -command exit
 
-scrollbar .mbar.scroll -command ".mbar.list yview"
-listbox .mbar.list -yscroll ".mbar.scroll set" \
-	-width 40 -height 6
-pack .mbar.list .mbar.scroll -side left -fill y -expand 1
+frame .mbar2 -borderwidth 1 -relief raised
+pack .mbar2 -fill x
 
-bind .mbar.list <Double-1> {
+scrollbar .mbar2.scroll -command ".mbar2.list yview"
+listbox .mbar2.list -yscroll ".mbar2.scroll set" \
+	-width 0 -height 0
+pack .mbar2.list .mbar2.scroll -side left
+
+bind .mbar2.list <Double-1> {
     view [selection get]
 }
 
-set c .c
+set c .mbar2.c
 pack [canvas $c] -expand true -fill both
 set xc 0
 set yc 0
