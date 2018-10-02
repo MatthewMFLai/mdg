@@ -18,6 +18,7 @@ exec wish $0 $@
 
 source scanstruct.tcl
 source loadzoom.tcl
+source cache.tcl
 
 proc view {structname} {
     global c
@@ -25,11 +26,43 @@ proc view {structname} {
     if {[Scanstruct::Get_Struct $structname] == ""} {
         return
     }
-    $c delete all 
-    Scanstruct::Create_Objects_Dot temp.dot $structname
-    exec dot -Ttk temp.dot -o temp.tk
+
+    $c delete all
     zoominit $c
-    source temp.tk
+
+    set tkdata [Cache::Get $structname]
+    if {$tkdata == ""} { 
+        Scanstruct::Create_Objects_Dot temp.dot $structname
+        exec dot -Ttk temp.dot -o temp.tk
+        source temp.tk
+       
+        set fd [open temp.tk r]
+        set tkfiledata [read $fd]
+        close $fd
+        Cache::Set $structname $tkfiledata
+
+        file delete temp.dot
+        file delete temp.tk
+
+    } else {
+        eval $tkdata
+
+    }
+
+    return 
+}
+
+proc view_next {prev_or_next} {
+    global c
+
+    $c delete all
+    zoominit $c
+
+    set tkdata [Cache::Get_Next $prev_or_next]
+    if {$tkdata != ""} { 
+        eval $tkdata
+    }
+
     return 
 }
 
@@ -46,6 +79,7 @@ proc load {lstdir} {
 tk_setPalette SkyBlue1
  
 Scanstruct::Init
+Cache::Init
 
 frame .mbar -borderwidth 1 -relief raised
 pack .mbar -fill x
@@ -67,6 +101,12 @@ menu .mbar.file.m
 .mbar.file.m add command -label "Reload" -command {
 }
 .mbar.file.m add command -label "Exit" -command exit
+
+button .mbar.b1 -text "<" -width 4 \
+    -command {view_next "CACHE_PREV"}
+button .mbar.b2 -text ">" -width 4 \
+    -command {view_next "CACHE_NEXT"}
+pack .mbar.b1 .mbar.b2 -side left
 
 frame .mbar2 -borderwidth 1 -relief raised
 pack .mbar2 -fill x
