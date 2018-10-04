@@ -76,6 +76,19 @@ proc load {lstdir} {
     return
 }
 
+proc save {filename structname} {
+
+    if {$structname == ""} {
+        return
+    }
+
+    Scanstruct::Create_Objects_Dot temp.dot $structname
+    exec dot -Tsvg temp.dot -o $filename 
+    file delete temp.dot
+
+    return 
+}
+
 tk_setPalette SkyBlue1
  
 Scanstruct::Init
@@ -98,7 +111,11 @@ menu .mbar.file.m
         .mbar2.list insert end $structname
     } 
 }	
-.mbar.file.m add command -label "Reload" -command {
+.mbar.file.m add command -label "SaveAs" -command {
+    set filename [tk_getSaveFile]
+    if {$filename != ""} {
+        save $filename [Cache::Get_Cur_Struct]
+    }
 }
 .mbar.file.m add command -label "Exit" -command exit
 

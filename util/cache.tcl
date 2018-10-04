@@ -73,6 +73,13 @@ proc Get_Next {prev_or_next} {
     return $m_tkfiles([lindex $m_structlist $m_cur])
 }
 
+proc Get_Cur_Struct {} {
+    variable m_structlist
+    variable m_cur
+
+    return [lindex $m_structlist $m_cur]
+}
+
 proc Set {structname tkfiledata} {
     variable m_tkfiles
     variable m_structlist
