@@ -20,8 +20,7 @@ source scanstruct.tcl
 source loadzoom.tcl
 source cache.tcl
 
-proc view {structname} {
-    global c
+proc view {c structname} {
 
     if {[Scanstruct::Get_Struct $structname] == ""} {
         return
@@ -134,13 +133,19 @@ listbox .mbar2.list -yscroll ".mbar2.scroll set" \
 pack .mbar2.list .mbar2.scroll -side left
 
 bind .mbar2.list <Double-1> {
-    view [selection get]
+    global c
+    view $c [selection get]
+}
+
+bind .mbar2.list <Button-3> {
+    global c2
+    if {[catch {toplevel .[selection get]} top_new] != 1} {
+        set c2 $top_new.canvas 
+        pack [canvas $c2] -expand true -fill both
+        view $c2 [selection get]
+    }
 }
 
 set c .mbar2.c
 pack [canvas $c] -expand true -fill both
-set xc 0
-set yc 0
 focus $c 
-bind $c <Button-1> {set xc %x; set yc %y} 
-bind $c <B1-Motion>  {moveItems  %W %x %y}

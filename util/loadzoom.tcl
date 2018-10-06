@@ -13,6 +13,9 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 proc zoominit {c {zfact {1.1}}} {
+    global xc
+    global yc
+
     # save zoom state in a global variable with the same name as the canvas handle
     upvar #0 $c data
     set data(zdepth) 1.0
@@ -21,6 +24,10 @@ proc zoominit {c {zfact {1.1}}} {
     bind $c <Button-4> "zoom $c $zfact"
     bind $c <Button-5> "zoom $c [expr {1.0/$zfact}]"
     bind $c <MouseWheel> "if {%D > 0} {zoom $c $zfact} else {zoom $c [expr {1.0/$zfact}]}"
+    set xc 0
+    set yc 0
+    bind $c <Button-1> {set xc %x; set yc %y} 
+    bind $c <B1-Motion>  "moveItems $c %x %y"
 }
  
 proc zoom {c fact} {
