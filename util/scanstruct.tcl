@@ -158,7 +158,7 @@ proc Run {filename} {
         if {$idx == 0} {
             continue
         }
-      
+
         switch -- $state \
 	    SCAN_LINE_WITH_STRUCT {
 		set idx [string first $struct $line]
@@ -185,23 +185,29 @@ proc Run {filename} {
                     set structname ""
 		    continue
 		}
-                #puts $line
+                #puts "open: $line"
 
                 set m_struct($structname) ""
+		# Line may already has the open brace.
+                if {[string index $line end] == "\{"} {
+		    set state SCAN_STRUCT_CLOSE_BRACE
+		    set line [string range $line 0 end-1]
+	        } else {
+		    set state SCAN_STRUCT_OPEN_BRACE
+                }
                 lappend m_struct($structname) $line
-		set state SCAN_STRUCT_OPEN_BRACE
 
 	    } SCAN_STRUCT_OPEN_BRACE {
                 if {[string index $line 0] == $openbrace} {
-                    #puts $line
+                    #puts "open brace: $line"
 		    set state SCAN_STRUCT_CLOSE_BRACE
                 }
 
     	    } SCAN_STRUCT_CLOSE_BRACE {
-                # puts $line 
+                #puts $line
                 if {[string match $closebrace $line] ||
                     [string first $closebraceonly $line] == 0} {
-                    #puts $line
+                    #puts "close: $line"
 		    set state SCAN_LINE_WITH_STRUCT
                     set dataline ""
                     set structname ""
